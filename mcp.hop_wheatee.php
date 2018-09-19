@@ -196,6 +196,10 @@ class Hop_wheatee_mcp {
             ->order_by('exp_channel_fields.field_label', 'ASC')
             ->get()->result_array();
 
+        // TODO: replace the above activeRecord queries with something like:
+        //$channel = ee('Model')->get('Channel')->filter('channel_id', $channel_id)->result_array();
+        //$fields = $channel->getAllCustomFields();
+
         $ungroupedTable = $this->create_field_table($unGroupedFields);
         $groupedTable = $this->create_field_table($groupedFields);
 
